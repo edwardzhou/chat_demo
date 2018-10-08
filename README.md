@@ -2,6 +2,10 @@
 This chat app demostrate how simple is the distribution and concurrency in Elixir's world. 
 build a simplified chat room within 30 lines code. and auto-scale to distributed via network transparent.
 
+source code:
+https://github.com/edwardzhou/chat_demo/blob/master/chat/lib/chat/chat_server.ex
+
+
 ## clone
 
 ```bash
