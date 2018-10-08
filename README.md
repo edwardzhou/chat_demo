@@ -1,6 +1,27 @@
 # Chat
+This chat app demostrate how simple is the distribution and concurrency in Elixir's world. 
+build a simplified chat room within 30 lines code. and auto-scale to distributed via network transparent.
 
-## Run
+## clone
+
+```bash
+git clone https://github.com/edwardzhou/chat_demo.git
+```
+
+## direct run (Elixir should be installed on your system already).
+```bash
+cd chat_demo/chat
+iex --cookie chatting --name chat@localhost -S mix
+```
+
+```elixir
+{:ok, pid} = Chat.ChatServer.start_link
+Chat.ChatServer.add_message(pid, "Edward", "Hi~")
+Chat.ChatServer.get_messages(pid)
+```
+
+
+## Run in docker (no need to install Elixir)
 
 ### step 1 - build compose and up
 
