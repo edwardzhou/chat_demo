@@ -1,0 +1,14 @@
+.git*
+_build
+deps
+!deps/phoenix
+!deps/phoenix_html
+# apps/aimidas_web/assets/node_modules
+# apps/integration_test_api/assets/node_modules
+node_modules/
+.circleci
+test
+priv/static
+.env*
+*.dump
+/docker

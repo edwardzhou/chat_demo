@@ -1,0 +1,33 @@
+version: '3.5'
+
+networks:
+  chatting-network:
+    # driver: bridge
+
+services:
+  chatapp_1:
+    container_name: host1.com
+    build:
+      context: ./chat
+      args:
+        - NLP_URL=${NLP_URL}
+        - MIX_ENV=${MIX_ENV}
+      dockerfile: Dockerfile
+    image: "chatapp_1"
+    tty: true
+    networks:
+      - "chatting-network"
+
+  chatapp_2:
+    container_name: host2.com
+    build:
+      context: ./chat
+      args:
+        - NLP_URL=${NLP_URL}
+        - MIX_ENV=${MIX_ENV}
+      dockerfile: Dockerfile
+    image: "chatapp_1"
+    tty: true
+    networks:
+      - "chatting-network"
+
